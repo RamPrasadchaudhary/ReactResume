@@ -1,28 +1,92 @@
+/* General Footer Styles */
 .footer {
-  display: flex;
-  align-items: center;
-  margin: -0.5rem -3.5rem;
-  position: relative;
-  margin-top: -7rem;
-}
-.f-content {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 4rem;
-  gap: 4rem;
-  color: white;
-}
-.f-icons {
-  display: flex;
-  gap: 2rem;
+  background-color: var(--orange); /* Background color */
+  color: black; /* Text color */
+  padding: 2rem 1rem;
+  text-align: center; /* Center align text for smaller screens */
 }
 
-@media screen and (max-width: 480px){
-  .f-content{
-    transform: scale(.5);
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* 3 columns with equal width */
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.footer h4 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: black;
+  font-weight: 600;
+  align-self: flex-start; /* Align h4 at the top of its container */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: black; /* Text color */
+}
+
+.social-links {
+  margin-bottom: 1.5rem;
+}
+
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  margin: 0.5rem 0;
+}
+
+.social-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #21a1f1; /* Change color on hover */
+}
+
+.social-links i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.contact-info {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info span {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.copy-right {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: black;
+}
+
+.copy-right p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left; /* Align text to the left for larger screens */
+  }
+
+  .footer-container > div {
+    flex: 1;
+    padding: 0 1rem;
   }
 }

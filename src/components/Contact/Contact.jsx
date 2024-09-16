@@ -2,11 +2,13 @@ import React, { useContext, useRef, useState } from "react";
 import "./Contact.css";
 import emailjs from "@emailjs/browser";
 import { themeContext } from "../../Context";
+
 const Contact = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
   const form = useRef();
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -21,7 +23,7 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           setDone(true);
-          form.reset();
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
@@ -31,30 +33,30 @@ const Contact = () => {
 
   return (
     <div className="contact-form" id="contact">
-      {/* left side copy and paste from work section */}
-      <div className="w-left">
+      {/* Left side */}
+      <div className="c-left">
         <div className="awesome">
-          {/* darkMode */}
-          <span style={{color: darkMode?'white': ''}}>Get in Touch</span>
-          <span>Contact me</span>
-          <div
-            className="blur s-blur1"
-            style={{ background: "#ABF1FF94" }}
-          ></div>
+          {/* DarkMode text color */}
+          <span style={{ color: darkMode ? 'white' : '' }}>Get in Touch</span>
+          <span>Contact Me</span>
+          <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
         </div>
       </div>
-      {/* right side form */}
+      {/* Right side form */}
       <div className="c-right">
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="user_name" className="user"  placeholder="Name"/>
-          <input type="email" name="user_email" className="user" placeholder="Email"/>
-          <textarea name="message" className="user" placeholder="Message"/>
-          <input type="submit" value="Send" className="button"/>
-          <span>{done && "Thanks for Contacting me"}</span>
-          <div
-            className="blur c-blur1"
-            style={{ background: "var(--purple)" }}
-          ></div>
+          <div className="form-group">
+            <input type="text" name="user_name" className="user" placeholder="Name" required />
+          </div>
+          <div className="form-group">
+            <input type="email" name="user_email" className="user" placeholder="Email" required />
+          </div>
+          <div className="form-group">
+            <textarea name="message" className="user" placeholder="Message" required />
+          </div>
+          <button type="submit" className="send-btn">Send</button>
+          <span className="response-message">{done && "Thanks for Contacting me"}</span>
+          <div className="blur c-blur1" style={{ background: "var(--purple)" }}></div>
         </form>
       </div>
     </div>

@@ -1,56 +1,123 @@
-.contact-form{
-    padding: 0 3rem 0 3rem;
+/* General Styles */
+.contact-form {
     display: flex;
-    height: 80vh;
-    margin-top: 4rem;
-      /* scroll */
-  padding-top: 3rem;
-}
-
-.c-right{
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9; /* Background color for contrast */
     position: relative;
+  }
+  
+  .c-left {
     flex: 1;
-}
-
-.c-right>form
-{
+    padding: 1rem;
+   
+  }
+  
+  .awesome {
+    text-align:center;
+    margin-bottom: 5vw;
+  }
+  
+  .awesome span {
+    display: block;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .awesome span:first-child {
+    color: var(--highlight-color, #000); /* Use a highlight color for the first span */
+  }
+  
+  .c-right {
+    flex: 2;
+    padding: 1rem;
+  }
+  
+  form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    
-}
-
-.c-right .user{
-    width: 20rem;
-    height: 2rem;
-    padding: 0.3em;
-    outline: none;
-    border: 2px solid var(--orange);
+    gap: 1rem;
+  }
+  
+  .form-group {
+    position: relative;
+    width: 70vh;
+    align-self: center;
+  }
+  
+  .user {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 16px;   
-}
-
-textarea{
-    height: 4rem!important;
-}
-
-.c-blur1{
-    top: 1rem;
-    left: 8rem;
-}
-
-@media screen and (max-width: 480px) {
-    .contact-form{
-        padding: 0;
-        flex-direction: column;
-        gap: 5rem;
-        height: 40rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s;
+  }
+  
+  .user:focus {
+    border-color: var(--highlight-color, #000); /* Highlight color on focus */
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical; /* Allow users to resize vertically */
+    min-height: 100px;
+  }
+  
+  .send-btn{
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    width:30vh;
+    align-self: center;
+    background-color: var(--orange); /* Button color */
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: var(--highlight-color-hover, #333); /* Darker button color on hover */
+  }
+  
+  .response-message {
+    margin-top: 1rem;
+    color: #28a745; /* Success message color */
+  }
+  
+  .blur {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: -1;
+  }
+  
+  .s-blur1 {
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+  }
+  
+  .c-blur1 {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 150%;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .contact-form {
+      flex-direction: column;
     }
-    .c-right .user{
-        width: 16rem;
+  
+    .w-left, .c-right {
+      flex: none;
+      width: 100%;
     }
-
-}   
+  }
+  

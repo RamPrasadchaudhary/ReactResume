@@ -49,6 +49,10 @@
 }
 .testimonial>span{
     color: var(--gray);
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+
 }
 
 

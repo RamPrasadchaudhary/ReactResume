@@ -26,11 +26,9 @@ const Services = () => {
         {/* dark mode */}
         <span style={{ color: darkMode ? "white" : "" }}>My Awesome</span>
         <span>services</span>
-        <spane>
-          Lorem ispum is simpley dummy text of printing of printing Lorem
-          <br />
-          ispum is simpley dummy text of printing
-        </spane>
+        <span>
+        A developer is often innovative, always looking for new and <br></br>creative solutions to problems. They are tech-savvy, having a strong <br></br>understanding of technology and its applications.
+        </span>
         <a href={Resume} download>
           <button className="button s-button">Download CV</button>
         </a>
@@ -72,7 +70,7 @@ const Services = () => {
             emoji={Humble}
             heading={"UI/UX"}
             detail={
-              "Lorem ispum dummy text are usually use in section where we need some random text"
+              "A UI/UX designer is often creative, with a keen eye for aesthetics and a talent for designing visually appealing interfaces. "
             }
             color="rgba(252, 166, 31, 0.45)"
           />
